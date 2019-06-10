@@ -1,0 +1,158 @@
+h1{
+	font-family: serif;
+}
+
+.octo{
+	display: grid;
+	grid-template-areas:
+	"skills_grid leggs_grid body_grid"
+	"skills_grid leggs_grid body_grid"
+	"skills_grid leggs_grid body_grid"
+	"skills_grid leggs_grid body_grid"
+	"skills_grid leggs_grid body_grid"
+	"skills_grid leggs_grid body_grid";
+	grid-template-rows: 1fr 1fr 1fr;
+  	grid-template-columns: 10em 18em 10em;
+  	grid-gap: 0.5vw;
+  	column-gap: 0;
+  	-webkit-tap-highlight-color: rgba(0, 0, 0, 0); 
+}
+
+.skills{
+
+	margin-left: 20px;
+	margin-right: 10px;
+	display: inline-flex;
+	flex-direction: column;
+}
+
+.skills>input{
+	grid-area: skills_grid;
+	border: none;
+
+}
+.octo-legs {
+	
+	display: inline-block;
+	list-style: none;
+	position: relative;
+	width: 18em;
+	height: 40px;
+	margin-right: 0;
+}
+.octo-body{
+	background-color: blue;	
+	width: 10em;
+	/*border-top-right-radius: 200px; */
+	/*margin-left: -6.5px;*/
+}
+.octo-body-1{
+	grid-area: body_grid;
+	border-top-right-radius: 50%;
+	border-bottom-right-radius: 50%;
+	margin-left: 0;
+	/*margin-bottom: -1em;*/
+}
+
+
+/*.octo-leg0, .octo-leg1{
+	grid-area: leggs_grid;
+}*/
+
+
+input[type=checkbox]{
+			display:block;
+			margin-left: auto;
+		}
+.octo-legs > input{
+
+			display: none; 
+		}
+
+		.progessbar{
+			/*grid-area: skills_grid;*/
+			position: absolute;
+			float: left;
+			right: 0;
+			width: 3em;
+			height: 100%;
+			background-color: blue;
+			transition-property: width;
+			transition-duration: 0.3s;
+			transition-timing-function: ease-in;
+			border-top-left-radius: 20px;
+			border-bottom-left-radius: 20px;
+		}
+
+		.octo-legs>label{
+			/*grid-area: skills_grid;*/
+			float: left;
+			display: inline-block;
+			padding: 0 0;
+			
+			content: ' ';
+			opacity: 0.5;
+			width: 3em;
+			height: 100%;
+			
+		}
+
+		div:hover .progessbar{
+			z-index: -1;
+		}
+		
+
+
+		label:hover, label:hover~label{ 
+			background-color: orange;
+			
+			cursor: pointer;
+
+		}
+		label:hover{
+			border-top-left-radius: 20px;
+			border-bottom-left-radius: 20px;
+		}
+		input#leg0-none:checked ~div, input#leg1-none:checked ~div, input#leg2-none:checked ~div {
+			width: 3em;
+		}
+		label:hover:before{
+
+			margin-left: 20px;
+			height: 100%;
+			line-height: 1.5em;
+			font-size: 1.5em;
+			font-color: black;
+		}
+		input#leg0-one+label:hover:before, input#leg1-one+label:hover:before, input#leg2-one+label:hover:before, input#leg3-one+label:hover:before, input#leg4-one+label:hover:before, input#leg5-one+label:hover:before{
+			content: '1';
+		}
+		input#leg0-two+label:hover:before, input#leg1-two+label:hover:before, input#leg2-two+label:hover:before, input#leg3-two+label:hover:before, input#leg4-two+label:hover:before, input#leg5-two+label:hover:before{
+			content: '2';
+		}
+		input#leg0-three+label:hover:before, input#leg1-three+label:hover:before, input#leg2-three+label:hover:before, input#leg3-three+label:hover:before, input#leg4-three+label:hover:before, input#leg5-three+label:hover:before{
+			content: '3';
+		}
+		input#leg0-four+label:hover:before, input#leg1-four+label:hover:before, input#leg2-four+label:hover:before, input#leg3-four+label:hover:before, input#leg4-four+label:hover:before, input#leg5-four+label:hover:before{
+			content: '4';
+		}
+		input#leg0-five+label:hover:before, input#leg1-five+label:hover:before, input#leg2-five+label:hover:before, input#leg3-five+label:hover:before, input#leg4-five+label:hover:before, input#leg5-five+label:hover:before{
+			content: '5';
+		}
+		
+
+		input#leg0-one:checked ~div, input#leg1-one:checked ~div, input#leg2-one:checked ~div, input#leg3-one:checked ~div, input#leg4-one:checked ~div, input#leg5-one:checked ~div{
+			width: 6em;
+		}
+		input#leg0-two:checked ~div, input#leg1-two:checked ~div, input#leg2-two:checked ~div, input#leg3-two:checked ~div, input#leg4-two:checked ~div, input#leg5-two:checked ~div{
+			width: 9em;
+		}
+		input#leg0-three:checked ~div, input#leg1-three:checked ~div, input#leg2-three:checked ~div, input#leg3-three:checked ~div, input#leg4-three:checked ~div, input#leg5-three:checked ~div{
+			width: 12em;
+		}
+		input#leg0-four:checked ~div, input#leg1-four:checked ~div, input#leg2-four:checked ~div, input#leg3-four:checked ~div, input#leg4-four:checked ~div, input#leg5-four:checked ~div{
+			width: 15em;
+		}
+		input#leg0-five:checked ~div, input#leg1-five:checked ~div, input#leg2-five:checked ~div, input#leg3-five:checked ~div, input#leg4-five:checked ~div, input#leg5-five:checked ~div{
+			width: 18em;
+		}
