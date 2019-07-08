@@ -1,12 +1,27 @@
-h1 {
-    font-family: serif;
+.wrapper {
+    margin: 0 auto;
+    width: 800px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+    margin-bottom: 40px;
 }
 
 .octo {
     display: grid;
-    grid-template-areas: "skills_grid leggs_grid body_grid" "skills_grid leggs_grid body_grid" "skills_grid leggs_grid body_grid" "skills_grid leggs_grid body_grid" "skills_grid leggs_grid body_grid" "skills_grid leggs_grid body_grid";
+    grid-template-areas:
+            "skills_grid leggs_grid body_grid"
+            "skills_grid leggs_grid body_grid"
+            "skills_grid leggs_grid body_grid"
+            "skills_grid leggs_grid body_grid"
+            "skills_grid leggs_grid body_grid"
+            "skills_grid leggs_grid body_grid";
     grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 10em 18em 10em;
+    grid-template-columns: 18em 18em 10em;
     grid-gap: 0.5vw;
     column-gap: 0;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -17,16 +32,25 @@ h1 {
     margin-right: 10px;
     display: inline-flex;
     flex-direction: column;
+    padding: 10px;
+    cursor: pointer;
+    border: 1px solid #DDD;
+    font-style: italic;
+}
+
+.skills_disabled {
+    border: 0;
+    font-style: normal;
+    cursor: default;
+    outline: 0;
 }
 
 .skills > input {
     grid-area: skills_grid;
     border: none;
-
 }
 
 .octo-legs {
-
     display: inline-block;
     list-style: none;
     position: relative;
@@ -42,11 +66,10 @@ h1 {
 
 .octo-body-1 {
     grid-area: body_grid;
-    border-top-right-radius: 50%;
-    border-bottom-right-radius: 50%;
+    border-top-right-radius: 999px;
+    border-bottom-right-radius: 999px;
     margin-left: 0;
 }
-
 
 input[type=checkbox] {
     display: block;
@@ -54,7 +77,6 @@ input[type=checkbox] {
 }
 
 .octo-legs > input {
-
     display: none;
 }
 
@@ -66,8 +88,8 @@ input[type=checkbox] {
     height: 100%;
     background-color: blue;
     transition-property: width;
-    transition-duration: 0.3s;
-    transition-timing-function: ease-in;
+    transition-duration: 0.22s;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
 }
@@ -99,7 +121,7 @@ label:hover {
     border-bottom-left-radius: 20px;
 }
 
-input#leg0-none:checked ~ div, input#leg1-none:checked ~ div, input#leg2-none:checked ~ div {
+input#leg0-0:checked ~ div, input#leg1-0:checked ~ div, input#leg2-0:checked ~ div {
     width: 3em;
 }
 
@@ -111,43 +133,42 @@ label:hover:before {
     font-color: black;
 }
 
-input#leg0-one + label:hover:before, input#leg1-one + label:hover:before, input#leg2-one + label:hover:before, input#leg3-one + label:hover:before, input#leg4-one + label:hover:before, input#leg5-one + label:hover:before {
+input#leg0-1 + label:hover:before, input#leg1-1 + label:hover:before, input#leg2-1 + label:hover:before, input#leg3-1 + label:hover:before, input#leg4-1 + label:hover:before, input#leg5-1 + label:hover:before {
     content: '1';
 }
 
-input#leg0-two + label:hover:before, input#leg1-two + label:hover:before, input#leg2-two + label:hover:before, input#leg3-two + label:hover:before, input#leg4-two + label:hover:before, input#leg5-two + label:hover:before {
+input#leg0-2 + label:hover:before, input#leg1-2 + label:hover:before, input#leg2-2 + label:hover:before, input#leg3-2 + label:hover:before, input#leg4-2 + label:hover:before, input#leg5-2 + label:hover:before {
     content: '2';
 }
 
-input#leg0-three + label:hover:before, input#leg1-three + label:hover:before, input#leg2-three + label:hover:before, input#leg3-three + label:hover:before, input#leg4-three + label:hover:before, input#leg5-three + label:hover:before {
+input#leg0-3 + label:hover:before, input#leg1-3 + label:hover:before, input#leg2-3 + label:hover:before, input#leg3-3 + label:hover:before, input#leg4-3 + label:hover:before, input#leg5-3 + label:hover:before {
     content: '3';
 }
 
-input#leg0-four + label:hover:before, input#leg1-four + label:hover:before, input#leg2-four + label:hover:before, input#leg3-four + label:hover:before, input#leg4-four + label:hover:before, input#leg5-four + label:hover:before {
+input#leg0-4 + label:hover:before, input#leg1-4 + label:hover:before, input#leg2-4 + label:hover:before, input#leg3-4 + label:hover:before, input#leg4-4 + label:hover:before, input#leg5-4 + label:hover:before {
     content: '4';
 }
 
-input#leg0-five + label:hover:before, input#leg1-five + label:hover:before, input#leg2-five + label:hover:before, input#leg3-five + label:hover:before, input#leg4-five + label:hover:before, input#leg5-five + label:hover:before {
+input#leg0-5 + label:hover:before, input#leg1-5 + label:hover:before, input#leg2-5 + label:hover:before, input#leg3-5 + label:hover:before, input#leg4-5 + label:hover:before, input#leg5-5 + label:hover:before {
     content: '5';
 }
 
-
-input#leg0-one:checked ~ div, input#leg1-one:checked ~ div, input#leg2-one:checked ~ div, input#leg3-one:checked ~ div, input#leg4-one:checked ~ div, input#leg5-one:checked ~ div {
+input#leg0-1:checked ~ div, input#leg1-1:checked ~ div, input#leg2-1:checked ~ div, input#leg3-1:checked ~ div, input#leg4-1:checked ~ div, input#leg5-1:checked ~ div {
     width: 6em;
 }
 
-input#leg0-two:checked ~ div, input#leg1-two:checked ~ div, input#leg2-two:checked ~ div, input#leg3-two:checked ~ div, input#leg4-two:checked ~ div, input#leg5-two:checked ~ div {
+input#leg0-2:checked ~ div, input#leg1-2:checked ~ div, input#leg2-2:checked ~ div, input#leg3-2:checked ~ div, input#leg4-2:checked ~ div, input#leg5-2:checked ~ div {
     width: 9em;
 }
 
-input#leg0-three:checked ~ div, input#leg1-three:checked ~ div, input#leg2-three:checked ~ div, input#leg3-three:checked ~ div, input#leg4-three:checked ~ div, input#leg5-three:checked ~ div {
+input#leg0-3:checked ~ div, input#leg1-3:checked ~ div, input#leg2-3:checked ~ div, input#leg3-3:checked ~ div, input#leg4-3:checked ~ div, input#leg5-3:checked ~ div {
     width: 12em;
 }
 
-input#leg0-four:checked ~ div, input#leg1-four:checked ~ div, input#leg2-four:checked ~ div, input#leg3-four:checked ~ div, input#leg4-four:checked ~ div, input#leg5-four:checked ~ div {
+input#leg0-4:checked ~ div, input#leg1-4:checked ~ div, input#leg2-4:checked ~ div, input#leg3-4:checked ~ div, input#leg4-4:checked ~ div, input#leg5-4:checked ~ div {
     width: 15em;
 }
 
-input#leg0-five:checked ~ div, input#leg1-five:checked ~ div, input#leg2-five:checked ~ div, input#leg3-five:checked ~ div, input#leg4-five:checked ~ div, input#leg5-five:checked ~ div {
+input#leg0-5:checked ~ div, input#leg1-5:checked ~ div, input#leg2-5:checked ~ div, input#leg3-5:checked ~ div, input#leg4-5:checked ~ div, input#leg5-5:checked ~ div {
     width: 18em;
 }
