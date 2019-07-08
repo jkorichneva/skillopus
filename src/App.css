@@ -1,6 +1,6 @@
 .wrapper {
     margin: 0 auto;
-    width: 800px;
+    width: 850px;
 }
 
 body {
@@ -21,7 +21,7 @@ p {
             "skills_grid leggs_grid body_grid"
             "skills_grid leggs_grid body_grid";
     grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 18em 18em 10em;
+    grid-template-columns: 20em 18em 10em;
     grid-gap: 0.5vw;
     column-gap: 0;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -62,13 +62,21 @@ p {
 .octo-body {
     background-color: blue;
     width: 10em;
-}
-
-.octo-body-1 {
+    position: relative;
     grid-area: body_grid;
     border-top-right-radius: 999px;
     border-bottom-right-radius: 999px;
     margin-left: 0;
+}
+
+.octo-body__skirt {
+    width: 40px;
+    left: -15px;
+    content: '';
+    position: absolute;
+    height: 100%;
+    z-index: 10;
+    opacity: 0.2;
 }
 
 input[type=checkbox] {
@@ -112,7 +120,8 @@ div:hover .progessbar {
 
 
 label:hover, label:hover ~ label {
-    background-color: orange;
+    background: red;
+    mix-blend-mode: color-burn;
     cursor: pointer;
 }
 
@@ -125,12 +134,38 @@ input#leg0-0:checked ~ div, input#leg1-0:checked ~ div, input#leg2-0:checked ~ d
     width: 3em;
 }
 
-label:hover:before {
+label:before {
+    position: absolute;
+    z-index: 11;
     margin-left: 20px;
     height: 100%;
-    line-height: 1.5em;
-    font-size: 1.5em;
-    font-color: black;
+    line-height: 1.1em;
+    font-size: 2.2em;
+    color: #FFF;
+}
+
+input:checked#leg0-1 + label:before, input:checked#leg1-1 + label:before, input:checked#leg2-1 + label:before, input:checked#leg3-1 + label:before, input:checked#leg4-1 + label:before, input:checked#leg5-1 + label:before {
+    content: '1';
+}
+
+input:checked#leg0-2 + label:before, input:checked#leg1-2 + label:before, input:checked#leg2-2 + label:before, input:checked#leg3-2 + label:before, input:checked#leg4-2 + label:before, input:checked#leg5-2 + label:before {
+    content: '2';
+}
+
+input:checked#leg0-3 + label:before, input:checked#leg1-3 + label:before, input:checked#leg2-3 + label:before, input:checked#leg3-3 + label:before, input:checked#leg4-3 + label:before, input:checked#leg5-3 + label:before {
+    content: '3';
+}
+
+input:checked#leg0-4 + label:before, input:checked#leg1-4 + label:before, input:checked#leg2-4 + label:before, input:checked#leg3-4 + label:before, input:checked#leg4-4 + label:before, input:checked#leg5-4 + label:before {
+    content: '4';
+}
+
+input:checked#leg0-5 + label:before, input:checked#leg1-5 + label:before, input:checked#leg2-5 + label:before, input:checked#leg3-5 + label:before, input:checked#leg4-5 + label:before, input:checked#leg5-5 + label:before {
+    content: '5';
+}
+
+input:checked#leg0-1:checked ~ div, input:checked#leg1-1:checked ~ div, input:checked#leg2-1:checked ~ div, input:checked#leg3-1:checked ~ div, input:checked#leg4-1:checked ~ div, input:checked#leg5-1:checked ~ div {
+    width: 6em;
 }
 
 input#leg0-1 + label:hover:before, input#leg1-1 + label:hover:before, input#leg2-1 + label:hover:before, input#leg3-1 + label:hover:before, input#leg4-1 + label:hover:before, input#leg5-1 + label:hover:before {

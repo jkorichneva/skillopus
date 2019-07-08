@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import randomColor from './utils/randomColor';
+
 import './App.css';
 
 const SKILLS = [
@@ -19,26 +21,41 @@ const LEVELS = [
     'Крутотеньски, быть лучше не может',
 ];
 
+
 const App = () => {
+    const primaryColor = randomColor();
+    const secondaryColor = randomColor({luminosity: 'bright'});
+
     const [currentLevel, setLevel] = useState(LEVELS.map(() => Math.round(Math.random() * LEVELS.length) - 1));
-    console.log(currentLevel);
+    const [currentSkills, setSkills] = useState([...SKILLS]);
 
     return (
         <div className="wrapper">
             <h1>Медузка навыков человеков</h1>
-            <p>Как себя проявляет Алексей Титов на ваш взгляд:</p>
+            <p>Как себя проявил Алексей Титов на ваш взгляд за последние 4 месяца:</p>
 
             <div className="octo">
-                <div className="octo-body octo-body-1"/>
+                <div className="octo-body" style={{ background: primaryColor }}>
+                    <div className="octo-body__skirt" style={{
+                        background: `linear-gradient(to right, ${secondaryColor} 0%, ${primaryColor} 85%)`
+                    }} />
+                </div>
 
-                {SKILLS.map((skill, skillKey) => (
+                {currentSkills.map((skill, skillKey) => (
                     <>
                         <input
-                            className={`skills ${!!skill ? 'skills_disabled' : ''}`}
+                            className={`skills ${skillKey !== currentSkills.length - 1 ? 'skills_disabled' : ''}`}
                             type="text"
                             name={`skill${skillKey}`}
-                            value={skill || 'Впишите свое...'}
-                            readOnly={!!skill}
+                            value={skill || ''}
+                            placeholder={'Впишите свое...'}
+                            readOnly={skillKey !== currentSkills.length - 1}
+                            onChange={event => {
+                                const target = event.target || event.currentTarget;
+                                setSkills(currentSkills.map((iterSkill, iterSkillKey) => {
+                                    return iterSkillKey === skillKey ? target.value : iterSkill;
+                                }))
+                            }}
                         />
                         <div className={`octo-legs octo-leg${skillKey}`}>
                             {LEVELS.reduceRight((result, level, levelKey) => {
@@ -58,7 +75,12 @@ const App = () => {
                                     </>
                                 )])
                             }, [])}
-                            <div className="progessbar"/>
+                            <div className="progessbar" style={{
+                                background:
+                                    (currentLevel[skillKey] >= LEVELS.length - 3) ?
+                                        `linear-gradient(to right, ${secondaryColor} 0%, ${primaryColor} 85%)` :
+                                        `${primaryColor}`
+                            }} />
                         </div>
                     </>
                 ))}
