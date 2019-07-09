@@ -53,6 +53,7 @@ const App = ({ name, period, responseEmail }) => {
         <div className="wrapper">
             <h1>{name}</h1>
             <p>Как себя проявил, на ваш взгляд, за последние {period} месяца/ев:</p>
+            <p><em>Что такое <a href="https://fff.works/octopus/">осьминожка навыков</a>, двигайте ноги - ставьте баллы</em></p>
 
             <div className="octo">
                 <div
