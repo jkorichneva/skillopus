@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b7dd53568165a821c60d49d3ef106cb5",
+    "revision": "84bc27530aecbbc66a826256cb4c3268",
     "url": "https://marapper.github.io/skillopus/build/index.html"
   },
   {
-    "revision": "30597044aeaf1d119ab0",
+    "revision": "2fece27dd08544eeeba5",
     "url": "https://marapper.github.io/skillopus/build/static/css/main.cac17544.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "https://marapper.github.io/skillopus/build/static/js/2.f2db194a.chunk.js"
   },
   {
-    "revision": "30597044aeaf1d119ab0",
-    "url": "https://marapper.github.io/skillopus/build/static/js/main.e92b68f8.chunk.js"
+    "revision": "2fece27dd08544eeeba5",
+    "url": "https://marapper.github.io/skillopus/build/static/js/main.47f68eca.chunk.js"
   },
   {
     "revision": "6819d5714b5a40d1dc4e",
