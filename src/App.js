@@ -21,17 +21,38 @@ const LEVELS = [
     'Крутотеньски, быть лучше не может',
 ];
 
-const App = () => {
+const App = ({ name, period, responseEmail }) => {
     const primaryColor = randomColor();
     const secondaryColor = randomColor({luminosity: 'bright'});
 
-    const [currentLevels, setLevel] = useState(LEVELS.map(() => Math.round(Math.random() * LEVELS.length) - 1));
+    const [isShowResults, showResults] = useState(false);
+
+    const [currentLevels, setLevel] = useState(LEVELS.map(() => Math.round(Math.random() * (LEVELS.length - 1))));
     const [currentSkills, setSkills] = useState([...SKILLS]);
+    const [answers, setAnswers] = useState({
+        positive: { text: '' },
+        negative: { text: '' },
+    });
+
+    const results = {
+        name,
+        period,
+        primaryColor,
+        secondaryColor,
+        skills: currentSkills.reduce((result, skill, key) => {
+            return {
+                ...result,
+                [skill]: currentLevels[key],
+            };
+        }, {}),
+        answers,
+    };
+    console.log(results);
 
     return (
         <div className="wrapper">
-            <h1>Алексей Титов</h1>
-            <p>Как себя проявил, на ваш взгляд, за последние 4 месяца:</p>
+            <h1>{name}</h1>
+            <p>Как себя проявил, на ваш взгляд, за последние {period} месяца/ев:</p>
 
             <div className="octo">
                 <div
@@ -86,10 +107,72 @@ const App = () => {
                         </div>
                     </>
                 ))}
-
             </div>
+
+            <div className="question">
+                <h2>Что было важно?</h2>
+                <textarea onChange={event => {
+                    setAnswers({
+                            ...answers,
+                            positive: {
+                                text: event.target.value,
+                            },
+                        });
+                    }}
+                    value={answers.positive.text}
+                />
+            </div>
+
+            <div className="question">
+                <h2>Что можно сделать было лучше?</h2>
+                <textarea onChange={event => {
+                        setAnswers({
+                            ...answers,
+                            negative: {
+                                text: event.target.value,
+                            },
+                        })
+                    }}
+                    value={answers.negative.text}
+                />
+            </div>
+
+            <div className="send-form">
+                <a
+                    className="send"
+                    href={getMailto(responseEmail, name, results)}
+                >
+                    Отправь результат
+                </a>
+                <span className="expand" onClick={() => showResults(true)}>или вручную</span>
+            </div>
+
+            {!!isShowResults && (
+                <div className="results">
+                    <h3>Скопируй и отправь на {responseEmail}</h3>
+                    <textarea readOnly={true} onClick={event => event.target.select()} value={serializeResults(results)} />
+                </div>
+            )}
         </div>
     );
 };
+
+function getMailto(email, name, results) {
+    return `mailto:${email}?subject=${getResponseSubject(name)}&body=${getResponseBody(results)}`;
+}
+
+function getResponseSubject(name) {
+    // encodeURIComponent
+    return (`Performance Review - ${name}`);
+}
+
+function getResponseBody(results) {
+    // encodeURIComponent
+    return (serializeResults(results));
+}
+
+function serializeResults(results) {
+    return JSON.stringify(results);
+}
 
 export default App;

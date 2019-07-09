@@ -5,6 +5,7 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 150px;
 }
 
 p {
@@ -206,4 +207,44 @@ input#leg0-4:checked ~ div, input#leg1-4:checked ~ div, input#leg2-4:checked ~ d
 
 input#leg0-5:checked ~ div, input#leg1-5:checked ~ div, input#leg2-5:checked ~ div, input#leg3-5:checked ~ div, input#leg4-5:checked ~ div, input#leg5-5:checked ~ div {
     width: 18em;
+}
+
+h2 {
+    font-size: 16px;
+}
+
+.question {
+    margin-top: 20px;
+    padding: 0;
+}
+
+textarea {
+    width: 90%;
+    height: 80px;
+}
+
+.send-form {
+    margin-top: 40px;
+}
+
+.send {
+    font-size: 18px;
+    background: violet;
+    border-radius: 5px;
+    color: #FFF;
+    padding: 20px 40px;
+}
+
+.expand {
+    cursor: pointer;
+    padding: 10px 0 0;
+    margin-left: 20px;
+    text-decoration: none;
+    border-bottom: 1px dashed #000;
+    color: #000;
+}
+
+.results {
+    margin-top: 60px;
+    width: 100%;
 }
