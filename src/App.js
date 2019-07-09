@@ -79,6 +79,8 @@ const App = ({ name, period, responseEmail }) => {
                                     return iterSkillKey === skillKey ? target.value : iterSkill;
                                 }))
                             }}
+
+                            maxlength="40"
                         />
                         <div className={`octo-legs octo-leg${skillKey}`}>
                             {LEVELS.reduceRight((result, level, levelKey) => {
@@ -119,6 +121,7 @@ const App = ({ name, period, responseEmail }) => {
                             },
                         });
                     }}
+                    maxlength="1500"
                     value={answers.positive.text}
                 />
             </div>
@@ -133,6 +136,7 @@ const App = ({ name, period, responseEmail }) => {
                             },
                         })
                     }}
+                    maxlength="1500"
                     value={answers.negative.text}
                 />
             </div>
