@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import randomColor from './utils/randomColor';
+import randomColor from 'randomcolor';
 
 import './App.css';
 
@@ -21,21 +21,23 @@ const LEVELS = [
     'Крутотеньски, быть лучше не может',
 ];
 
-
 const App = () => {
     const primaryColor = randomColor();
     const secondaryColor = randomColor({luminosity: 'bright'});
 
-    const [currentLevel, setLevel] = useState(LEVELS.map(() => Math.round(Math.random() * LEVELS.length) - 1));
+    const [currentLevels, setLevel] = useState(LEVELS.map(() => Math.round(Math.random() * LEVELS.length) - 1));
     const [currentSkills, setSkills] = useState([...SKILLS]);
 
     return (
         <div className="wrapper">
-            <h1>Медузка навыков человеков</h1>
-            <p>Как себя проявил Алексей Титов на ваш взгляд за последние 4 месяца:</p>
+            <h1>Алексей Титов</h1>
+            <p>Как себя проявил, на ваш взгляд, за последние 4 месяца:</p>
 
             <div className="octo">
-                <div className="octo-body" style={{ background: primaryColor }}>
+                <div
+                    className="octo-body"
+                    style={{ background: primaryColor }}
+                >
                     <div className="octo-body__skirt" style={{
                         background: `linear-gradient(to right, ${secondaryColor} 0%, ${primaryColor} 85%)`
                     }} />
@@ -66,8 +68,8 @@ const App = () => {
                                             name={`leg${skillKey}`}
                                             id={`leg${skillKey}-${levelKey}`}
                                             value={levelKey}
-                                            checked={currentLevel[skillKey] === levelKey ? 'checked' : ''}
-                                            onClick={() => setLevel(currentLevel.map((iterLevelKey, iterSkillKey) => {
+                                            checked={currentLevels[skillKey] === levelKey ? 'checked' : ''}
+                                            onChange={() => setLevel(currentLevels.map((iterLevelKey, iterSkillKey) => {
                                                 return iterSkillKey === skillKey ? levelKey : iterLevelKey;
                                             }))}
                                         />
@@ -77,7 +79,7 @@ const App = () => {
                             }, [])}
                             <div className="progessbar" style={{
                                 background:
-                                    (currentLevel[skillKey] >= LEVELS.length - 3) ?
+                                    (currentLevels[skillKey] >= LEVELS.length - 3) ?
                                         `linear-gradient(to right, ${secondaryColor} 0%, ${primaryColor} 85%)` :
                                         `${primaryColor}`
                             }} />
