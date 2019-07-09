@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.cac17544.chunk.css",
-    "main.js": "/static/js/main.9bb7cd5a.chunk.js",
-    "main.js.map": "/static/js/main.9bb7cd5a.chunk.js.map",
-    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
-    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-    "static/js/2.f2db194a.chunk.js": "/static/js/2.f2db194a.chunk.js",
-    "static/js/2.f2db194a.chunk.js.map": "/static/js/2.f2db194a.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.4390e43dc19467b86bba61f7246616ba.js": "/precache-manifest.4390e43dc19467b86bba61f7246616ba.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.cac17544.chunk.css.map": "/static/css/main.cac17544.chunk.css.map"
+    "main.css": "https://marapper.github.io/skillopus/build/static/css/main.cac17544.chunk.css",
+    "main.js": "https://marapper.github.io/skillopus/build/static/js/main.570ebd37.chunk.js",
+    "main.js.map": "https://marapper.github.io/skillopus/build/static/js/main.570ebd37.chunk.js.map",
+    "runtime~main.js": "https://marapper.github.io/skillopus/build/static/js/runtime~main.423f72e1.js",
+    "runtime~main.js.map": "https://marapper.github.io/skillopus/build/static/js/runtime~main.423f72e1.js.map",
+    "static/js/2.f2db194a.chunk.js": "https://marapper.github.io/skillopus/build/static/js/2.f2db194a.chunk.js",
+    "static/js/2.f2db194a.chunk.js.map": "https://marapper.github.io/skillopus/build/static/js/2.f2db194a.chunk.js.map",
+    "index.html": "https://marapper.github.io/skillopus/build/index.html",
+    "precache-manifest.1de3813e814fc5a5e0eaf6e060fa123d.js": "https://marapper.github.io/skillopus/build/precache-manifest.1de3813e814fc5a5e0eaf6e060fa123d.js",
+    "service-worker.js": "https://marapper.github.io/skillopus/build/service-worker.js",
+    "static/css/main.cac17544.chunk.css.map": "https://marapper.github.io/skillopus/build/static/css/main.cac17544.chunk.css.map"
   }
 }
