@@ -146,7 +146,7 @@ const App = ({ name, period, responseEmail }) => {
                 >
                     Отправь результат
                 </a>
-                <span className="expand" onClick={() => showResults(true)}>или вручную</span>
+                <span className="expand" onClick={() => showResults(true)}>или, если это не сработает на нажатии, вручную</span>
             </div>
 
             {!!isShowResults && (
