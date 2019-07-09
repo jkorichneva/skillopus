@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "https://marapper.github.io/skillopus/build/precache-manifest.0317690426967b7de48346635816bc27.js"
+  "https://marapper.github.io/skillopus/build/precache-manifest.c9ee85c99e92f3827c58ef97223514ad.js"
 );
 
 self.addEventListener('message', (event) => {

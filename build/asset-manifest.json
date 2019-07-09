@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "https://marapper.github.io/skillopus/build/static/css/main.cac17544.chunk.css",
-    "main.js": "https://marapper.github.io/skillopus/build/static/js/main.389b3299.chunk.js",
-    "main.js.map": "https://marapper.github.io/skillopus/build/static/js/main.389b3299.chunk.js.map",
+    "main.js": "https://marapper.github.io/skillopus/build/static/js/main.e92b68f8.chunk.js",
+    "main.js.map": "https://marapper.github.io/skillopus/build/static/js/main.e92b68f8.chunk.js.map",
     "runtime~main.js": "https://marapper.github.io/skillopus/build/static/js/runtime~main.423f72e1.js",
     "runtime~main.js.map": "https://marapper.github.io/skillopus/build/static/js/runtime~main.423f72e1.js.map",
     "static/js/2.f2db194a.chunk.js": "https://marapper.github.io/skillopus/build/static/js/2.f2db194a.chunk.js",
     "static/js/2.f2db194a.chunk.js.map": "https://marapper.github.io/skillopus/build/static/js/2.f2db194a.chunk.js.map",
     "index.html": "https://marapper.github.io/skillopus/build/index.html",
-    "precache-manifest.0317690426967b7de48346635816bc27.js": "https://marapper.github.io/skillopus/build/precache-manifest.0317690426967b7de48346635816bc27.js",
+    "precache-manifest.c9ee85c99e92f3827c58ef97223514ad.js": "https://marapper.github.io/skillopus/build/precache-manifest.c9ee85c99e92f3827c58ef97223514ad.js",
     "service-worker.js": "https://marapper.github.io/skillopus/build/service-worker.js",
     "static/css/main.cac17544.chunk.css.map": "https://marapper.github.io/skillopus/build/static/css/main.cac17544.chunk.css.map"
   }

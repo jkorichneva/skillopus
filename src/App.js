@@ -144,7 +144,7 @@ const App = ({ name, period, responseEmail }) => {
                     className="send"
                     href={getMailto(responseEmail, name, results)}
                 >
-                    Отправь результат
+                    Открыть письмо в Outlook
                 </a>
                 <span className="expand" onClick={() => showResults(true)}>или, если это не сработает на нажатии, вручную</span>
             </div>
