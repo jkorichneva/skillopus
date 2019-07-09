@@ -51,6 +51,7 @@ const App = ({ name, period, responseEmail }) => {
 
     return (
         <div className="wrapper">
+            <p><em>Что такое <a href="https://fff.works/octopus/">осьминожка навыков</a>, двигайте ноги - ставьте баллы</em></p>
             <h1>{name}</h1>
             <p>Как себя проявил, на ваш взгляд, за последние {period} месяца/ев:</p>
 
@@ -59,9 +60,6 @@ const App = ({ name, period, responseEmail }) => {
                     className="octo-body"
                     style={{ background: primaryColor }}
                 >
-                    <div className="octo-body__skirt" style={{
-                        background: `linear-gradient(to right, ${secondaryColor} 0%, ${primaryColor} 85%)`
-                    }} />
                 </div>
 
                 {currentSkills.map((skill, skillKey) => (
@@ -71,7 +69,7 @@ const App = ({ name, period, responseEmail }) => {
                             type="text"
                             name={`skill${skillKey}`}
                             value={skill || ''}
-                            placeholder={'Впишите свое...'}
+                            placeholder={'Впишите свой навык для оценки...'}
                             readOnly={skillKey !== currentSkills.length - 1}
                             onChange={event => {
                                 const target = event.target || event.currentTarget;
@@ -115,29 +113,29 @@ const App = ({ name, period, responseEmail }) => {
                 <h2>Что было важно?</h2>
                 <textarea onChange={event => {
                     setAnswers({
-                            ...answers,
-                            positive: {
-                                text: event.target.value,
-                            },
-                        });
-                    }}
-                    maxlength="1500"
-                    value={answers.positive.text}
+                        ...answers,
+                        positive: {
+                            text: event.target.value,
+                        },
+                    });
+                }}
+                          maxlength="1500"
+                          value={answers.positive.text}
                 />
             </div>
 
             <div className="question">
-                <h2>Что можно сделать было лучше?</h2>
+                <h2>Что можно было сделать лучше?</h2>
                 <textarea onChange={event => {
-                        setAnswers({
-                            ...answers,
-                            negative: {
-                                text: event.target.value,
-                            },
-                        })
-                    }}
-                    maxlength="1500"
-                    value={answers.negative.text}
+                    setAnswers({
+                        ...answers,
+                        negative: {
+                            text: event.target.value,
+                        },
+                    })
+                }}
+                          maxlength="1500"
+                          value={answers.negative.text}
                 />
             </div>
 
@@ -146,9 +144,9 @@ const App = ({ name, period, responseEmail }) => {
                     className="send"
                     href={getMailto(responseEmail, name, results)}
                 >
-                    Отправь результат
+                    Открыть письмо в Outlook
                 </a>
-                <span className="expand" onClick={() => showResults(true)}>или вручную</span>
+                <span className="expand" onClick={() => showResults(true)}>или, если это не сработает на нажатии, вручную</span>
             </div>
 
             {!!isShowResults && (
@@ -167,12 +165,12 @@ function getMailto(email, name, results) {
 
 function getResponseSubject(name) {
     // encodeURIComponent
-    return (`Performance Review - ${name}`);
+    return (`Performance Review - ${name}`).replace(' ', '%20');
 }
 
 function getResponseBody(results) {
     // encodeURIComponent
-    return (serializeResults(results));
+    return (serializeResults(results)).replace(' ', '%20');
 }
 
 function serializeResults(results) {
