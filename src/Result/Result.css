@@ -1,0 +1,43 @@
+.results-heading {
+    margin-top: 60px;
+    margin-left: 350px;
+}
+
+.results {
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    display: flex;
+    width: 90%;
+}
+
+.result {
+    width: 590px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 40px 0 0;
+}
+
+.result .skills {
+    position: relative;
+    left: 150px;
+    font-size: 21px;
+    height: 17px;
+    z-index: -1;
+    width: 400px;
+}
+
+.reviews {
+    margin-top: 50px;
+    float: left;
+    width: 35%;
+    margin-left: 14%;
+}
+.reviews:last-child {
+    margin-left: 3%;
+}
+
+.reviews p {
+    margin: 5px 0 0;
+    font-size: 27px;
+}

@@ -1,0 +1,199 @@
+
+.octo {
+    display: grid;
+    grid-template-areas:
+            "skills_grid leggs_grid body_grid"
+            "skills_grid leggs_grid body_grid"
+            "skills_grid leggs_grid body_grid"
+            "skills_grid leggs_grid body_grid"
+            "skills_grid leggs_grid body_grid"
+            "skills_grid leggs_grid body_grid";
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 20em 18em 10em;
+    grid-gap: 0.5vw;
+    column-gap: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.skills {
+    margin-left: 20px;
+    margin-right: 10px;
+    display: inline-flex;
+    flex-direction: column;
+    padding: 10px;
+    cursor: pointer;
+    border: 1px solid #DDD;
+    font-style: italic;
+    background: none;
+}
+
+.skills_disabled {
+    border: 0;
+    font-style: normal;
+    cursor: default;
+    outline: 0;
+}
+
+.skills > input {
+    grid-area: skills_grid;
+    border: none;
+}
+
+.octo-legs {
+    display: inline-block;
+    list-style: none;
+    position: relative;
+    width: 18em;
+    height: 40px;
+    margin-right: 0;
+}
+
+.octo-body {
+    background-color: blue;
+    width: 10em;
+    position: relative;
+    grid-area: body_grid;
+    border-top-right-radius: 999px;
+    border-bottom-right-radius: 999px;
+    margin-left: 0;
+}
+
+.octo-body__skirt {
+    width: 40px;
+    left: -15px;
+    content: '';
+    position: absolute;
+    height: 100%;
+    z-index: 10;
+    opacity: 0.2;
+}
+
+input[type=checkbox] {
+    display: block;
+    margin-left: auto;
+}
+
+.octo-legs > input {
+    display: none;
+}
+
+.progessbar {
+    position: absolute;
+    float: left;
+    right: 0;
+    width: 3em;
+    height: 100%;
+    background-color: blue;
+    transition-property: width;
+    transition-duration: 0.22s;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.octo-legs > label {
+    float: left;
+    display: inline-block;
+    padding: 0 0;
+
+    content: ' ';
+    opacity: 0.5;
+    width: 3em;
+    height: 100%;
+
+}
+
+div:hover .progessbar {
+    z-index: -1;
+}
+
+
+label:hover, label:hover ~ label {
+    background: red;
+    mix-blend-mode: color-burn;
+    cursor: pointer;
+}
+
+label:hover {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+input.leg0-0:checked ~ div, input.leg1-0:checked ~ div, input.leg2-0:checked ~ div {
+    width: 3em;
+}
+
+label:before {
+    position: absolute;
+    z-index: 11;
+    margin-left: 20px;
+    height: 100%;
+    line-height: 1.1em;
+    font-size: 2.2em;
+    color: #FFF;
+}
+
+input.leg0-1 + label:hover:before, input.leg1-1 + label:hover:before, input.leg2-1 + label:hover:before, input.leg3-1 + label:hover:before, input.leg4-1 + label:hover:before, input.leg5-1 + label:hover:before {
+    content: '1';
+}
+
+input.leg0-2 + label:hover:before, input.leg1-2 + label:hover:before, input.leg2-2 + label:hover:before, input.leg3-2 + label:hover:before, input.leg4-2 + label:hover:before, input.leg5-2 + label:hover:before {
+    content: '2';
+}
+
+input.leg0-3 + label:hover:before, input.leg1-3 + label:hover:before, input.leg2-3 + label:hover:before, input.leg3-3 + label:hover:before, input.leg4-3 + label:hover:before, input.leg5-3 + label:hover:before {
+    content: '3';
+}
+
+input.leg0-4 + label:hover:before, input.leg1-4 + label:hover:before, input.leg2-4 + label:hover:before, input.leg3-4 + label:hover:before, input.leg4-4 + label:hover:before, input.leg5-4 + label:hover:before {
+    content: '4';
+}
+
+input.leg0-5 + label:hover:before, input.leg1-5 + label:hover:before, input.leg2-5 + label:hover:before, input.leg3-5 + label:hover:before, input.leg4-5 + label:hover:before, input.leg5-5 + label:hover:before {
+    content: '5';
+}
+
+input:checked.leg0-1 + label:before, input:checked.leg1-1 + label:before, input:checked.leg2-1 + label:before, input:checked.leg3-1 + label:before, input:checked.leg4-1 + label:before, input:checked.leg5-1 + label:before {
+    content: '1';
+}
+
+input:checked.leg0-2 + label:before, input:checked.leg1-2 + label:before, input:checked.leg2-2 + label:before, input:checked.leg3-2 + label:before, input:checked.leg4-2 + label:before, input:checked.leg5-2 + label:before {
+    content: '2';
+}
+
+input:checked.leg0-3 + label:before, input:checked.leg1-3 + label:before, input:checked.leg2-3 + label:before, input:checked.leg3-3 + label:before, input:checked.leg4-3 + label:before, input:checked.leg5-3 + label:before {
+    content: '3';
+}
+
+input:checked.leg0-4 + label:before, input:checked.leg1-4 + label:before, input:checked.leg2-4 + label:before, input:checked.leg3-4 + label:before, input:checked.leg4-4 + label:before, input:checked.leg5-4 + label:before {
+    content: '4';
+}
+
+input:checked.leg0-5 + label:before, input:checked.leg1-5 + label:before, input:checked.leg2-5 + label:before, input:checked.leg3-5 + label:before, input:checked.leg4-5 + label:before, input:checked.leg5-5 + label:before {
+    content: '5';
+}
+
+input:checked.leg0-1:checked ~ div, input:checked.leg1-1:checked ~ div, input:checked.leg2-1:checked ~ div, input:checked.leg3-1:checked ~ div, input:checked.leg4-1:checked ~ div, input:checked.leg5-1:checked ~ div {
+    width: 6em;
+}
+
+
+input.leg0-1:checked ~ div, input.leg1-1:checked ~ div, input.leg2-1:checked ~ div, input.leg3-1:checked ~ div, input.leg4-1:checked ~ div, input.leg5-1:checked ~ div {
+    width: 6em;
+}
+
+input.leg0-2:checked ~ div, input.leg1-2:checked ~ div, input.leg2-2:checked ~ div, input.leg3-2:checked ~ div, input.leg4-2:checked ~ div, input.leg5-2:checked ~ div {
+    width: 9em;
+}
+
+input.leg0-3:checked ~ div, input.leg1-3:checked ~ div, input.leg2-3:checked ~ div, input.leg3-3:checked ~ div, input.leg4-3:checked ~ div, input.leg5-3:checked ~ div {
+    width: 12em;
+}
+
+input.leg0-4:checked ~ div, input.leg1-4:checked ~ div, input.leg2-4:checked ~ div, input.leg3-4:checked ~ div, input.leg4-4:checked ~ div, input.leg5-4:checked ~ div {
+    width: 15em;
+}
+
+input.leg0-5:checked ~ div, input.leg1-5:checked ~ div, input.leg2-5:checked ~ div, input.leg3-5:checked ~ div, input.leg4-5:checked ~ div, input.leg5-5:checked ~ div {
+    width: 18em;
+}
