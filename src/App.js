@@ -165,12 +165,12 @@ function getMailto(email, name, results) {
 
 function getResponseSubject(name) {
     // encodeURIComponent
-    return (`Performance Review - ${name}`).replace(' ', '%20');
+    return (`Performance Review - ${name}`).replace(/ /g, '%20');
 }
 
 function getResponseBody(results) {
     // encodeURIComponent
-    return (serializeResults(results)).replace(' ', '%20');
+    return (serializeResults(results)).replace(/ /g, '%20');
 }
 
 function serializeResults(results) {
