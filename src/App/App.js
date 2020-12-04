@@ -77,7 +77,7 @@ const App = ({
             />
 
             <div className="question">
-                <h2>Что было важно?</h2>
+                <h2>Что было важно? За что хочется похвалить?</h2>
                 <textarea onChange={event => {
                     setAnswers({
                         ...answers,
@@ -92,7 +92,7 @@ const App = ({
             </div>
 
             <div className="question">
-                <h2>Что можно было сделать лучше?</h2>
+                <h2>Что можно было сделать лучше? Над чем стоит поработать?</h2>
                 <textarea onChange={event => {
                     setAnswers({
                         ...answers,
